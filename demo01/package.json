@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "使用babel构建",
   "main": "lib/index.js",
-  "module": "esm/index.js",
+  "module": "es/index.js",
   "sideEffects": false,
   "scripts": {
     "build": "npm run build:lib && npm run build:esm && npm run build:dist",

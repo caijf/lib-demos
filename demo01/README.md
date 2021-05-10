@@ -15,7 +15,7 @@
 `package.json` 中加入 `module` `sideEffects` ，在生产环境构建时将启用 Tree-shaking 特性，减少包体积。
 
 ```json
-  "module": "esm/index.js",
+  "module": "es/index.js",
   "sideEffects": false,
 ```
 
