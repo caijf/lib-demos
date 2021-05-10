@@ -1,0 +1,34 @@
+{
+  "name": "demo01",
+  "version": "1.0.0",
+  "description": "使用babel构建",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run build:lib && npm run build:esm && npm run build:dist",
+    "build:lib": "rm -rf lib && babel src -d lib",
+    "build:esm": "rm -rf es && cross-env MODULE_TYPE=esm babel src -d es",
+    "build:dist": "rm -rf dist && npm run build:dist-development && npm run build:dist-production",
+    "build:dist-development": "cross-env MODULE_TYPE=golbal webpack --mode=development",
+    "build:dist-production": "cross-env MODULE_TYPE=golbal webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.1",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "minimist": "^1.2.5",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0"
+  }
+}
