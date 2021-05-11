@@ -1,7 +1,7 @@
 {
   "name": "demo01",
   "version": "1.0.0",
-  "description": "使用babel构建",
+  "description": "babel + webpack 开发的工具库",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
