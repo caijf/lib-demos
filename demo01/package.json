@@ -13,8 +13,7 @@
     "build:dist": "rm -rf dist && npm run build:dist-development && npm run build:dist-production",
     "build:dist-development": "cross-env MODULE_TYPE=golbal webpack --mode=development",
     "build:dist-production": "cross-env MODULE_TYPE=golbal webpack --mode=production",
-    "test": "jest",
-    "coverage": "rm -rf coverage && jest --coverage",
+    "test": "jest --coverage --verbose",
     "doc": "jsdoc src -d ./docs/"
   },
   "files": [
