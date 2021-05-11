@@ -1,16 +1,14 @@
 # demo01
 
-> 参考项目 [util-helpers](https://github.com/doly-dev/util-helpers)。
-
-适用于使用 es6 开发的工具库。
+使用 es6 开发的工具库
 
 ## 特性
 
-- 使用 babel 将 es6 转 es5，构建 `umd` `esm` 格式。
-- 使用 webpack 输出 `dist/*` 支持浏览器直接引入。
-- 支持 Tree-shaking
+- 使用 babel 输出 `umd` `esm`
+- 使用 webpack 输出合并后的 `umd` ，支持浏览器直接引入
+- 该库本身开发没有 Tree-shaking，但是支持外部使用 Tree-shaking
 
-### Tree-shaking
+### Tree-shaking 说明
 
 `package.json` 中加入 `module` `sideEffects` ，在生产环境构建时将启用 Tree-shaking 特性，减少包体积。
 
