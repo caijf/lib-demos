@@ -1,5 +1,5 @@
 declare namespace demo01 {
-  export const sum = (...args: number[]) => number;
+  const sum = (...args: number[]) => number;
   export default sum;
 }
 
