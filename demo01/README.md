@@ -21,8 +21,11 @@ babel + webpack 开发的工具库
 
 如果要支持 typescript 检测和提示，需要手动编写 \*.d.ts ，比较麻烦。
 
-## 推荐集成
+如，创建声明文件 `types/index.d.ts`，然后再 `package.json` 中添加 `types: types/index.d.ts` 。
+
+## 参考
 
 - [tsconfig](https://www.staging-typescript.org/zh/tsconfig)
 - [jest](https://facebook.github.io/jest/)
 - [jsdoc](https://jsdoc.app/)
+- [babel](https://babeljs.io/)

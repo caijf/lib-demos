@@ -10,7 +10,6 @@ yarn-error.log*
 dist
 coverage
 .npmignore
-components/**/*.css
 
 # misc
 .DS_Store
