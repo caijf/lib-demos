@@ -4,7 +4,7 @@ babel + webpack 开发的工具库
 
 ## 特性
 
-- 使用 babel 输出 `umd` `esm`
+- 使用 babel 输出 `cjs` `es`
 - 使用 webpack 输出合并后的 `umd` ，支持浏览器直接引入
 - jest 测试
 - jsdoc 生成文档

@@ -2,24 +2,24 @@
   "name": "demo01",
   "version": "1.0.0",
   "description": "babel + webpack 开发的工具库",
-  "main": "lib/index.js",
+  "main": "cjs/index.js",
   "module": "es/index.js",
   "sideEffects": false,
   "types": "types/index.d.ts",
   "scripts": {
-    "build": "npm run build:lib && npm run build:esm && npm run build:dist",
-    "build:lib": "rm -rf lib && babel src -d lib",
-    "build:esm": "rm -rf es && cross-env MODULE_TYPE=esm babel src -d es",
-    "build:dist": "rm -rf dist && npm run build:dist-development && npm run build:dist-production",
-    "build:dist-development": "cross-env MODULE_TYPE=golbal webpack --mode=development",
-    "build:dist-production": "cross-env MODULE_TYPE=golbal webpack --mode=production",
+    "build": "npm run build:cjs && npm run build:es && npm run build:umd",
+    "build:cjs": "rm -rf cjs && cross-env MODULE_TYPE=cjs babel src -d cjs",
+    "build:es": "rm -rf es && cross-env MODULE_TYPE=es babel src -d es",
+    "build:umd": "rm -rf umd && npm run build:umd-development && npm run build:umd-production",
+    "build:umd-development": "cross-env MODULE_TYPE=umd webpack --mode=development",
+    "build:umd-production": "cross-env MODULE_TYPE=umd webpack --mode=production",
     "test": "jest --coverage --verbose",
     "doc": "jsdoc src -d ./docs/"
   },
   "files": [
     "es",
-    "lib",
-    "dist"
+    "cjs",
+    "umd"
   ],
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.14.1",
     "babel-jest": "^26.6.3",

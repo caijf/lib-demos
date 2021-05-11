@@ -4,15 +4,14 @@ const { MODULE_TYPE } = process.env;
 
 // 字符串中的链接符转为驼峰
 function toCamel(str) {
-  return str.replace(/(-)(.{1})/g, ($0, $1, $2) => {
-    return /[a-z]/.test($2) ? $2.toUpperCase() : $2;
+  return str.replace(/-(.{1})/g, (m, p1) => {
+    return /[a-z]/.test(p1) ? p1.toUpperCase() : p1;
   });
 }
 
-const babelEnvModulesConfig = MODULE_TYPE === "esm" ? { modules: false } : {};
 const plugins = [];
 
-if (MODULE_TYPE !== "esm") {
+if (MODULE_TYPE === "umd") {
   plugins.push([
     "@babel/transform-modules-umd",
     {
@@ -22,9 +21,10 @@ if (MODULE_TYPE !== "esm") {
       "exactGlobals": true
     }
   ]);
-}
-
-if (MODULE_TYPE !== "global") {
+} else {
+  if (MODULE_TYPE === "cjs") {
+    plugins.push("@babel/transform-modules-commonjs");
+  }
   plugins.push("@babel/transform-runtime");
 }
 
@@ -33,7 +33,7 @@ module.exports = {
     [
       "@babel/env",
       {
-        ...babelEnvModulesConfig,
+        "modules": MODULE_TYPE !== "es" ? MODULE_TYPE : false,
         "targets": [
           "> 1%",
           "last 4 versions",

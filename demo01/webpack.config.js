@@ -4,8 +4,8 @@ const pkg = require("./package.json");
 
 // 字符串中的链接符转为驼峰
 function toCamel(str) {
-  return str.replace(/(-)(.{1})/g, ($0, $1, $2) => {
-    return /[a-z]/.test($2) ? $2.toUpperCase() : $2;
+  return str.replace(/-(.{1})/g, (m, p1) => {
+    return /[a-z]/.test(p1) ? p1.toUpperCase() : p1;
   });
 }
 
@@ -19,7 +19,7 @@ const devtool = isProd ? 'source-map' : 'eval-source-map';
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "umd"),
     filename,
     library: {
       name: toCamel(pkg.name),
