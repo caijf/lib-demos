@@ -8,6 +8,12 @@ export function sum(...args) {
   return Array.from(args).reduce((prev, curr) => prev + curr, 0);
 }
 
+/**
+ * divide
+ * 
+ * @param  {...number} args 相除的数值
+ * @returns 值
+ */
 export function divide(...args) {
-  return Array.from(args).reduce((prev, curr) => prev / curr, 1);
+  return Array.from(args).reduce((prev, curr) => prev / curr);
 }

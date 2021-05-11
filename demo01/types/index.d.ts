@@ -1,6 +1,6 @@
 declare namespace demo01 {
-  const sum = (...args: number[]) => number;
-  export default sum;
+  export const sum = (...args: number[]) => number;
+  export const divide = (...args: number[]) => number;
 }
 
 export as namespace demo01;

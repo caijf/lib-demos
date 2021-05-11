@@ -1,3 +1,6 @@
-import { sum } from './math';
+import { sum, divide } from './math';
 
-export default sum;
+export {
+  sum,
+  divide
+};
