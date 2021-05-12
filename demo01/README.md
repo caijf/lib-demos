@@ -15,8 +15,8 @@ babel + webpack 开发的工具库
 `package.json` 中加入 `module` `sideEffects` ，在生产环境构建时将启用 Tree-shaking 特性，减少包体积。
 
 ```json
-  "module": "es/index.js",
-  "sideEffects": false,
+  "module": "es/index.js", // webpack resolve.mainfields 主入口默认为 ['browser', 'module', 'main']
+  "sideEffects": false, // 标识副作用的文件，让 webpack 不要去除
 ```
 
 ## 缺陷
@@ -31,3 +31,4 @@ babel + webpack 开发的工具库
 - [jest](https://facebook.github.io/jest/)
 - [jsdoc](https://jsdoc.app/)
 - [babel](https://babeljs.io/)
+- [深入浅出 sideEffects](https://github.com/happylindz/blog/issues/15)
