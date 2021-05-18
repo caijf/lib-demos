@@ -1,6 +1,7 @@
 const path = require("path");
-const parseArgs = require("minimist");
 const pkg = require("./package.json");
+
+const { NODE_ENV } = process.env;
 
 // 字符串中的链接符转为驼峰
 function toCamel(str) {
@@ -9,9 +10,7 @@ function toCamel(str) {
   });
 }
 
-const cmdArgs = parseArgs(process.argv.slice(2));
-
-const isProd = cmdArgs.mode === "production";
+const isProd = NODE_ENV === "production";
 
 const filename = isProd ? `${pkg.name}.min.js` : `${pkg.name}.js`;
 const devtool = isProd ? 'source-map' : 'eval-source-map';
