@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.webpack.json",
+  "compilerOptions": {
+    "declaration": true,
+    "importHelpers": true,
+    "sourceMap": false,
+  }
+}
