@@ -1,0 +1,49 @@
+{
+  "tags": {
+    "allowUnknownTags": false
+  },
+  "source": {
+    "include": [
+      "src",
+      "README.md"
+    ],
+    "exclude": [],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+    "template": "node_modules/docdash",
+    "encoding": "utf8",
+    "destination": "docs/",
+    "recurse": true,
+    "verbose": true
+  },
+  "docdash": {
+    "openGraph": {
+      "title": "demo01",
+      "type": "website",
+      "image": "",
+      "site_name": "demo01",
+      "url": "https://caijf.github.io/lib-demos/demo01/docs/index.html"
+    },
+    "meta": {
+      "title": "demo01 ",
+      "description": "测试工具方法库",
+      "keyword": "util, demo01"
+    },
+    "search": true,
+    "menu": {
+      "Github repo": {
+        "href": "https://github.com/caijf/lib-demos",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repo_link"
+      }
+    }
+  }
+}
