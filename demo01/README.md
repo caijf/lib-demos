@@ -1,6 +1,6 @@
 # demo01
 
-babel + webpack 开发的工具库
+babel + webpack 开发的工具库，[点击查看在线文档](https://caijf.github.io/lib-demos/demo01/docs/index.html)
 
 ## 特性
 
@@ -8,6 +8,7 @@ babel + webpack 开发的工具库
 - 使用 webpack 输出合并后的 `umd` ，支持浏览器直接引入
 - jest 测试
 - jsdoc 生成文档
+- 基于 jsdoc 注释，生成声明文件
 - 支持 Tree-shaking
 
 ### Tree-shaking 说明
@@ -19,16 +20,17 @@ babel + webpack 开发的工具库
   "sideEffects": false, // 标识副作用的文件，让 webpack 不要去除
 ```
 
-## 缺陷
+## 问题
 
-如果要支持 typescript 检测和提示，需要手动编写 \*.d.ts ，比较麻烦。
+### 为什么不直接使用 `.ts` 文件？
 
-如，创建声明文件 `types/index.d.ts`，然后再 `package.json` 中添加 `types: types/index.d.ts` 。
+如果使用 `.ts` 文件名并添加类型， 无法使用 `jsdoc` 生成文档。
 
 ## 参考
 
 - [tsconfig](https://www.staging-typescript.org/zh/tsconfig)
-- [jest](https://facebook.github.io/jest/)
+- [JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+- [jest](https://jestjs.io/zh-Hans/)
 - [jsdoc](https://jsdoc.app/)
 - [babel](https://babeljs.io/)
 - [深入浅出 sideEffects](https://github.com/happylindz/blog/issues/15)
