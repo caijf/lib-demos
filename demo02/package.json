@@ -14,9 +14,7 @@
     "build:umd-development": "webpack --mode=development",
     "build:umd-production": "cross-env NODE_ENV=production webpack --mode=production",
     "test": "jest --coverage --verbose",
-    "doc": "rm -rf docs && typedoc --out docs src/index.ts",
-    "type:es": "tsc -m es2015 --outDir es",
-    "type:cjs": "tsc -m commonjs --outDir cjs"
+    "doc": "rm -rf docs && typedoc --out docs src/index.ts"
   },
   "files": [
     "es",
