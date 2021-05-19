@@ -9,7 +9,7 @@
   "scripts": {
     "build": "npm run build:cjs && npm run build:es && npm run build:umd",
     "build:cjs": "rm -rf cjs && tsc --outDir cjs",
-    "build:es": "rm -rf es && tsc --outDir es",
+    "build:es": "rm -rf es && tsc -m ES2015 --outDir es",
     "build:umd": "rm -rf umd && npm run build:umd-development && npm run build:umd-production",
     "build:umd-development": "webpack --mode=development",
     "build:umd-production": "cross-env NODE_ENV=production webpack --mode=production",
