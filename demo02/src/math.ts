@@ -17,15 +17,3 @@ export function sum(...args: number[]) {
 export function divide(...args: number[]) {
   return Array.from(args).reduce((prev, curr) => prev / curr);
 }
-
-
-// test async function
-export async function asyncFunction() {
-  await new Promise(resolve => {
-    setTimeout(resolve, 2000);
-  })
-}
-
-// test spreadArray
-const arr = ["a", "b", "c"];
-export const spreadArray = [...arr];
