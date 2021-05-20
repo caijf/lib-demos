@@ -1,5 +1,5 @@
 # lib-demos
 
-- [demo01](./demo01) - babel + webpack 开发的工具库
-- [demo02](./demo02) - typescript + webpack 开发的工具库
-- [demo02](./demo03) - typescript + rollup 开发的工具库
+- [demo01](./demo01) - babel + webpack + jsdoc 工具库脚手架
+- [demo02](./demo02) - typescript + webpack + typedoc 工具库脚手架
+- [demo02](./demo03) - typescript + rollup + typedoc 工具库脚手架

@@ -1,6 +1,8 @@
 # demo01
 
-babel + webpack 开发的工具库，[点击查看在线文档](https://caijf.github.io/lib-demos/demo01/docs/index.html)
+babel + webpack + jsdoc 工具库脚手架
+
+[点击查看在线文档](https://caijf.github.io/lib-demos/demo01/docs/index.html)
 
 ## 特性
 

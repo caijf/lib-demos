@@ -1,6 +1,8 @@
 # demo02
 
-typescript + webpack 开发的工具库，[点击查看在线文档](https://caijf.github.io/lib-demos/demo02/docs/index.html)
+typescript + webpack + typedoc 工具库脚手架
+
+[点击查看在线文档](https://caijf.github.io/lib-demos/demo02/docs/index.html)
 
 ## 特性
 
