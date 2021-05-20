@@ -2,6 +2,8 @@
 
 [father] + [dumi] 组件库脚手架
 
+[点击查看在线文档](https://caijf.github.io/lib-demos/demo04/docs-dist/index.html)
+
 ## 适用场景：
 
 1. `react` 相关 `component`、`hooks` 开发

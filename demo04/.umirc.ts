@@ -10,5 +10,8 @@ export default defineConfig({
   mode: 'site',
   hash: true,
   publicPath,
+  history: {
+    type: "hash"
+  }
   // more config: https://d.umijs.org/config
 });
