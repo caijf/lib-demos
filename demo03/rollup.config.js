@@ -4,10 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
-const { NODE_ENV } = process.env;
-
-const isProduction = NODE_ENV === 'production';
-
 // 字符串中的链接符转为驼峰
 function toCamel(str) {
   return str.replace(/-(.{1})/g, (m, p1) => {
@@ -22,15 +18,21 @@ export default {
   output: [
     {
       format: "umd",
-      file: `umd/${globalVarName}${isProduction ? ".min" : ""}.js`,
+      file: `umd/${globalVarName}.js`,
       name: globalVarName,
-      sourcemap: isProduction ? true : "inline"
+      sourcemap: "inline"
+    },
+    {
+      format: "umd",
+      file: `umd/${globalVarName}.min.js`,
+      name: globalVarName,
+      sourcemap: true,
+      plugins: [terser()]
     }
   ],
   plugins: [
     resolve(),
     commonjs(),
-    typescript(),
-    isProduction && terser()
+    typescript()
   ]
 }
