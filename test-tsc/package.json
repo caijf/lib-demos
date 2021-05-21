@@ -1,0 +1,12 @@
+{
+  "name": "test-tsc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
