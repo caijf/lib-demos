@@ -1,5 +1,3 @@
-// @ts-check
-
 import { sum, divide } from './math';
 
 export {
