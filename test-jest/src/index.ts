@@ -1,3 +1,3 @@
 import { sum } from './math';
 
-export default sum;
+export { sum };
