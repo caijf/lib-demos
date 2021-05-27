@@ -1,3 +1,5 @@
+// refs: https://github.com/streamich/react-use/blob/master/tests/useUpdate.test.ts
+
 import { act, renderHook } from '@testing-library/react-hooks';
 import useUpdate from '../index';
 
