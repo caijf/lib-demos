@@ -9,7 +9,7 @@ typescript + webpack + typedoc 工具库脚手架
 - 使用 tsc 输出 `cjs` `es`
 - 使用 webpack 输出合并后的 `umd` ，支持浏览器直接引入
 - jest 测试
-- typedoc 生成文档
+- typedoc 生成类型文档站点
 - 支持 Tree-shaking
 
 ### Tree-shaking 说明

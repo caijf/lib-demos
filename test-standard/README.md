@@ -51,7 +51,6 @@ npx eslint --init
 /lib
 /es
 /dist
-/dist
 ```
 
 3. 自定义集成第三方检查库

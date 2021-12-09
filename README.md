@@ -29,7 +29,7 @@
 ### 文档生成工具
 
 - [jsdoc](https://jsdoc.app/) - 根据 Javascript 文件注释信息，生成 API 文档
-- [typedoc](http://typedoc.org/) - TypeScript 文档生成工具，类比 jsdoc
+- [typedoc](http://typedoc.org/) - TypeScript 文档生成工具
 - **[dumi](https://d.umijs.org/zh-CN) - 支持静态文档、React 组件的文档工具**
 - [docusaurus](https://www.docusaurus.cn/) - 基于 React 框架的静态站点生成器
 - [VuePress](https://vuepress.vuejs.org/zh/) - vue 驱动的网站生成器
@@ -37,4 +37,4 @@
 
 ## TODO
 
-jest、github action、typescript
+jest、e2e、github action、typescript
