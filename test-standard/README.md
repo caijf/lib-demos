@@ -115,7 +115,8 @@ module.exports = {
       true,
       { ignoreSelectors: ['::-webkit-input-placeholder', '/-moz-.*/'] }
     ]
-  }
+  },
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts']
 };
 ```
 
