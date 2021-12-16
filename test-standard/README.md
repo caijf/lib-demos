@@ -134,6 +134,14 @@ module.exports = {
 
 [`官网`](https://stylelint.io/) 或 [`github issue`](https://github.com/stylelint/stylelint/issues) 中搜索对应规则一般都可以找到方案。
 
+1. 保存 `*.less` 文件后自动处理样式顺序
+
+可安装 [`prettier-plugin-two-style-order`](https://www.npmjs.com/package/prettier-plugin-two-style-order)
+
+```bash
+yarn add prettier-plugin-two-style-order -D
+```
+
 ## [prettier](https://prettier.io/)
 
 美化各种文档。
