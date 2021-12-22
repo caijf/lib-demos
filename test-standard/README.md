@@ -57,13 +57,22 @@ npx eslint --init
 
 比如 react 的项目，集成 `eslint-plugin-react-hooks` 检测 `react hooks` 规则。请查阅 [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) 。
 
-它只有两条规则：
+```bash
+yarn add eslint-plugin-react-hooks --dev
+```
 
 ```javascript
-"rules": {
-  // ...
-  "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-  "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+// Your ESLint configuration
+{
+  "plugins": [
+    // ...
+    "react-hooks"
+  ],
+  "rules": {
+    // ...
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+  }
 }
 ```
 
@@ -273,6 +282,7 @@ yarn add lint-staged --dev
 
 ```javascript
 "scripts": {
+  "lint-staged": "lint-staged",
   "precommit": "lint-staged"
 },
 "lint-staged": {
@@ -338,3 +348,39 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 ```
 
 原先使用 `git commit -m xxx` 改用 `yarn commit` ，当然也可以直接使用 `npx cz`。
+
+## package json 配置
+
+如果以上都配置了，大概内容如下：
+
+```javascript
+// package.json
+{
+  scripts: {
+    // ...
+    "lint-staged": "lint-staged",
+    "prettier": "prettier --write **/*",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:fix": "npm run lint-fix:js && npm run lint-fix:style",
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint-fix:js": "npm run lint:js -- --fix",
+    "lint:style": "stylelint src/**/*.less",
+    "lint-fix:style": "npm run lint:stylelint -- --fix",
+    "commit": "cz"
+  },
+  "lint-staged": {
+    "**/*.{css,less}": "stylelint --fix",
+    "**/*.{js,jsx,ts,tsx}": "eslint",
+    "**/*.{css,scss,less,js,jsx,ts,tsx,json,md}": "prettier -w"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit \"$1\""
+  }
+}
+```
