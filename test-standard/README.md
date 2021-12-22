@@ -142,6 +142,30 @@ module.exports = {
 yarn add prettier-plugin-two-style-order -D
 ```
 
+项目根目录新增 `.vscode` 目录，并添加以下文件：
+
+`extensions.json`
+
+```json
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint"
+  ]
+}
+```
+
+`settings.json`
+
+```json
+{
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
 ## [prettier](https://prettier.io/)
 
 美化各种文档。
