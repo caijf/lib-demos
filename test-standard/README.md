@@ -220,6 +220,24 @@ yarn add prettier --dev
 
 _注：常用配置字体加粗斜体_
 
+- **常用配置**
+
+**.prettierrc**
+
+```javascript
+{
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "printWidth": 100,
+  "useTabs": false,
+  "semi": true,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "proseWrap": "never"
+}
+```
+
 - **常用脚本**
 
 ```javascript
@@ -261,7 +279,6 @@ yarn-error.log
 
 /dist
 /build
-/public
 ```
 
 ## [lint-staged](https://www.npmjs.com/package/lint-staged)
