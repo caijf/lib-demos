@@ -401,3 +401,30 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
   }
 }
 ```
+
+## 补充
+
+`.gitignore` 常用配置
+
+```
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# production
+build
+zip
+
+# misc
+.DS_Store
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+package-lock.json
+```
