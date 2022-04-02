@@ -373,7 +373,7 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 ```javascript
 // package.json
 {
-  scripts: {
+  "scripts": {
     // ...
     "lint-staged": "lint-staged",
     "prettier": "prettier --write **/*",
