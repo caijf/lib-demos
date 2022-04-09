@@ -20,7 +20,7 @@ export default {
       format: "umd",
       file: `umd/${globalVarName}.js`,
       name: globalVarName,
-      sourcemap: "inline"
+      sourcemap: true
     },
     {
       format: "umd",
