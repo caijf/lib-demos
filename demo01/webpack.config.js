@@ -13,7 +13,6 @@ function toCamel(str) {
 const isProd = NODE_ENV === "production";
 
 const filename = isProd ? `${pkg.name}.min.js` : `${pkg.name}.js`;
-const devtool = isProd ? 'source-map' : 'eval-source-map';
 
 module.exports = {
   entry: "./src/index.js",
@@ -26,7 +25,7 @@ module.exports = {
       umdNamedDefine: true
     }
   },
-  devtool,
+  devtool: 'source-map',
   module: {
     rules: [
       {
