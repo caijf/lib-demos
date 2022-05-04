@@ -6,6 +6,7 @@
 - [demo02](./demo02) - typescript + webpack + typedoc 工具库脚手架
 - [demo03](./demo03) - typescript + rollup + typedoc 工具库脚手架
 - [demo04](./demo04) - father-build + dumi 组件库脚手架
+- [demo05](./demo05) - gulp 处理 html、js、css、image 等静态资源打包
 
 ## 前端规范相关工具集成
 
