@@ -355,7 +355,7 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 - **常用脚本**
 
-这里使用了 [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) 交互式生成规范提交信息。
+这里使用了 [`commitizen`](https://www.npmjs.com/package/commitizen) [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) 交互式生成规范提交信息。
 
 ```javascript
 "scripts": {
