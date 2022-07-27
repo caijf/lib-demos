@@ -33,6 +33,6 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    typescript()
+    typescript({ compilerOptions: { target: 'ES3' } })
   ]
 }
