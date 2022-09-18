@@ -47,7 +47,7 @@ npx eslint --init
 
 新建 `.eslintignore` 文件。比如，一些构建文件不需要检测：
 
-```
+```text
 /lib
 /es
 /dist
@@ -120,6 +120,9 @@ module.exports = {
     'selector-class-pattern': null,
     'selector-id-pattern': null,
     'font-family-no-missing-generic-family-keyword': null,
+    'rule-empty-line-before': null,
+    'import-notation': ['string'],
+    'value-keyword-case': ['lower', { ignoreKeywords: ['optimizeLegibility'] }],
     'selector-no-vendor-prefix': [
       true,
       { ignoreSelectors: ['::-webkit-input-placeholder', '/-moz-.*/'] }
@@ -253,7 +256,7 @@ _注：常用配置字体加粗斜体_
 
 比如：
 
-```
+```text
 .DS_Store
 
 CNAME
