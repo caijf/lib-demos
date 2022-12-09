@@ -409,7 +409,7 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 `.gitignore` 常用配置
 
-```
+```text
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -421,6 +421,7 @@ coverage
 # production
 build
 zip
+dist
 
 # misc
 .DS_Store
