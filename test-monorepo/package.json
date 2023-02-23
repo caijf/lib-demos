@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "test:a": "lerna exec --scope mod-a -- yarn test"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.5.1"
+  },
+  "dependencies": {
+    "eslint": "^8.34.0"
+  }
+}
