@@ -8,9 +8,8 @@
     "packages/*"
   ],
   "devDependencies": {
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.34.0",
     "lerna": "^6.5.1"
-  },
-  "dependencies": {
-    "eslint": "^8.34.0"
   }
 }
