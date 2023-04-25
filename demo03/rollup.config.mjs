@@ -1,30 +1,25 @@
+import { defineConfig } from 'rollup';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
-import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import terser from '@rollup/plugin-terser';
 
-// 字符串中的链接符转为驼峰
-function toCamel(str) {
-  return str.replace(/-(.{1})/g, (m, p1) => {
-    return /[a-z]/.test(p1) ? p1.toUpperCase() : p1;
-  });
-}
+const globalVarName = 'demo03';
 
-const globalVarName = toCamel(pkg.name);
-
-export default {
+export default defineConfig({
   input: "src/index.ts",
   output: [
     {
       format: "umd",
       file: `umd/${globalVarName}.js`,
+      exports: 'named',
       name: globalVarName,
       sourcemap: true
     },
     {
       format: "umd",
       file: `umd/${globalVarName}.min.js`,
+      exports: 'named',
       name: globalVarName,
       sourcemap: true,
       plugins: [terser()]
@@ -33,6 +28,6 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    typescript({ compilerOptions: { target: 'ES3' } })
+    typescript()
   ]
-}
+});
