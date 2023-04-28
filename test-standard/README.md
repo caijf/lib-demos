@@ -20,11 +20,14 @@ npx eslint --init
 
 - **常用脚本**
 
-```javascript
-"scripts": {
+```json
+{
   // ...
-  "lint:js": "eslint --ext .js,.jsx,.ts,.tsx src",
-  "lint-fix:js": "npm run lint:js -- --fix"
+  "scripts": {
+    // ...
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint-fix:js": "npm run lint:js -- --fix"
+  }
 }
 ```
 
@@ -34,10 +37,13 @@ npx eslint --init
 
 环境配置添加 `node: true` ：
 
-```javascript
-"env": {
+```json
+{
   // ...
-  "node": true
+  "env": {
+    // ...
+    "node": true
+  }
 }
 ```
 
@@ -61,7 +67,7 @@ npx eslint --init
 yarn add eslint-plugin-react-hooks --dev
 ```
 
-```javascript
+```json
 // Your ESLint configuration
 {
   "plugins": [
@@ -134,11 +140,14 @@ module.exports = {
 
 - **常用脚本**
 
-```javascript
-"scripts": {
+```json
+{
   // ...
-  "lint:style": "stylelint src/**/*.less",
-  "lint-fix:style": "npm run lint:stylelint -- --fix"
+  "scripts": {
+    // ...
+    "lint:style": "stylelint src/**/*.less",
+    "lint-fix:style": "npm run lint:stylelint -- --fix"
+  }
 }
 ```
 
@@ -227,12 +236,11 @@ _注：常用配置字体加粗斜体_
 
 **.prettierrc**
 
-```javascript
+```json
 {
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",
-  "printWidth": 100,
   "useTabs": false,
   "semi": true,
   "bracketSpacing": true,
@@ -243,10 +251,13 @@ _注：常用配置字体加粗斜体_
 
 - **常用脚本**
 
-```javascript
-"scripts": {
+```json
+{
   // ...
-  "prettier": "prettier --write **/*"
+  "scripts": {
+    // ...
+    "prettier": "prettier --write **/*"
+  }
 }
 ```
 
@@ -300,15 +311,18 @@ yarn add lint-staged --dev
 
 如果你用到上面介绍的 `eslint` `stylelint` `prettier` ，可配置如下：
 
-```javascript
-"scripts": {
-  "lint-staged": "lint-staged",
-  "precommit": "lint-staged"
-},
-"lint-staged": {
-  "**/*.{css,less}": "stylelint --fix",
-  "**/*.{js,jsx,ts,tsx}": "eslint",
-  "**/*.{css,scss,less,js,jsx,ts,tsx,json,md}": "prettier -w"
+```json
+{
+  // ...
+  "scripts": {
+    "lint-staged": "lint-staged",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{css,less}": "stylelint --fix",
+    "**/*.{js,jsx,ts,tsx}": "eslint",
+    "**/*.{css,scss,less,js,jsx,ts,tsx,json,md}": "prettier -w"
+  }
 }
 ```
 
@@ -342,15 +356,18 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 
 `package.json`
 
-```javascript
-"config": {
-  "commitizen": {
-    "path": "./node_modules/cz-conventional-changelog"
+```json
+{
+  // ...
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit \"$1\""
   }
-},
-"gitHooks": {
-  "pre-commit": "lint-staged",
-  "commit-msg": "npx --no -- commitlint --edit \"$1\""
 }
 ```
 
@@ -360,11 +377,14 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 这里使用了 [`commitizen`](https://www.npmjs.com/package/commitizen) [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) 交互式生成规范提交信息。
 
-```javascript
-"scripts": {
+```json
+{
   // ...
-  "commit": "cz"
-},
+  "scripts": {
+    // ...
+    "commit": "cz"
+  },
+}
 ```
 
 原先使用 `git commit -m xxx` 改用 `yarn commit` ，当然也可以直接使用 `npx cz`。
@@ -373,9 +393,10 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 如果以上都配置了，大概内容如下：
 
-```javascript
+```json
 // package.json
 {
+  // ...
   "scripts": {
     // ...
     "lint-staged": "lint-staged",
