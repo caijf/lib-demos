@@ -243,6 +243,7 @@ _注：常用配置字体加粗斜体_
   "trailingComma": "none",
   "useTabs": false,
   "semi": true,
+  "printWidth": 100,
   "bracketSpacing": true,
   "arrowParens": "always",
   "proseWrap": "never"
