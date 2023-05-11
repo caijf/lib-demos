@@ -28,6 +28,11 @@ export default defineConfig({
   plugins: [
     resolve(),
     commonjs(),
-    typescript()
+    typescript({
+      tsconfig: "./tsconfig.build.json",
+      compilerOptions: {
+        removeComments: true
+      }
+    })
   ]
 });
