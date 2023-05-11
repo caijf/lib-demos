@@ -20,7 +20,7 @@ npx eslint --init
 
 - **常用脚本**
 
-```json
+```javascript
 {
   // ...
   "scripts": {
@@ -37,7 +37,7 @@ npx eslint --init
 
 环境配置添加 `node: true` ：
 
-```json
+```javascript
 {
   // ...
   "env": {
@@ -67,7 +67,7 @@ npx eslint --init
 yarn add eslint-plugin-react-hooks --dev
 ```
 
-```json
+```javascript
 // Your ESLint configuration
 {
   "plugins": [
@@ -140,7 +140,7 @@ module.exports = {
 
 - **常用脚本**
 
-```json
+```javascript
 {
   // ...
   "scripts": {
@@ -167,7 +167,7 @@ yarn add prettier-plugin-two-style-order -D
 
 `extensions.json`
 
-```json
+```javascript
 {
   "recommendations": [
     "esbenp.prettier-vscode",
@@ -179,7 +179,7 @@ yarn add prettier-plugin-two-style-order -D
 
 `settings.json`
 
-```json
+```javascript
 {
   "editor.formatOnSave": true,
   "prettier.requireConfig": true,
@@ -236,7 +236,7 @@ _注：常用配置字体加粗斜体_
 
 **.prettierrc**
 
-```json
+```javascript
 {
   "singleQuote": true,
   "tabWidth": 2,
@@ -252,7 +252,7 @@ _注：常用配置字体加粗斜体_
 
 - **常用脚本**
 
-```json
+```javascript
 {
   // ...
   "scripts": {
@@ -312,7 +312,7 @@ yarn add lint-staged --dev
 
 如果你用到上面介绍的 `eslint` `stylelint` `prettier` ，可配置如下：
 
-```json
+```javascript
 {
   // ...
   "scripts": {
@@ -357,7 +357,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 
 `package.json`
 
-```json
+```javascript
 {
   // ...
   "config": {
@@ -378,13 +378,13 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 这里使用了 [`commitizen`](https://www.npmjs.com/package/commitizen) [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) 交互式生成规范提交信息。
 
-```json
+```javascript
 {
   // ...
   "scripts": {
     // ...
     "commit": "cz"
-  },
+  }
 }
 ```
 
@@ -394,7 +394,7 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 如果以上都配置了，大概内容如下：
 
-```json
+```javascript
 // package.json
 {
   // ...
