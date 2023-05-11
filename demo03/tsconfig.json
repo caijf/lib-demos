@@ -1,13 +1,4 @@
 {
-  "exclude": [
-    "docs/",
-    "cjs/",
-    "es/",
-    "umd/",
-    "commitlint.config.js",
-    "jest.config.js",
-    "rollup*.mjs"
-  ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Basic Options */
