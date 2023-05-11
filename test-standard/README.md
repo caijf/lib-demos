@@ -294,6 +294,7 @@ yarn-error.log
 
 /dist
 /build
+/coverage
 ```
 
 ## [lint-staged](https://www.npmjs.com/package/lint-staged)
