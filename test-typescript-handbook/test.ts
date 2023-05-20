@@ -4,8 +4,7 @@ type ExchangeFieldNames<D extends any, F extends Record<string, keyof D>> = Omit
 
 // 交换字段名，支持嵌套
 // 先排除子级字段名，再交换字段名，然后加上子级字段名，再替换一次。这里的 F 有类型问题，因为排除了子级字段名，暂时没有比较好的方案处理。
-// @ts-ignore
-type TransformFieldNames<D extends any, F extends Record<string, keyof D>, C extends string> = (C extends keyof D ? ExchangeFieldNames<Omit<D, C> & Record<C, TransformFieldNames<D, F, C>>, F> : ExchangeFieldNames<D, F>)[];
+type TransformFieldNames<D extends any, F extends Record<string, any>, C extends string> = (C extends keyof D ? ExchangeFieldNames<Omit<D, C> & Record<C, TransformFieldNames<D, F, C>>, F> : ExchangeFieldNames<D, F>)[];
 
 // 测试
 // function transformFieldNames<D extends any, F extends Record<string, keyof D>, C extends string>(data: D[], fieldNames: F, childrenField?: C): TransformFieldNames<D, F, C> {
