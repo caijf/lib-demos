@@ -6,13 +6,13 @@
 
 - **安装**
 
-```bash
-yarn add eslint --dev
+```shell
+pnpm add eslint --dev
 ```
 
 - **初始化配置**
 
-```bash
+```shell
 npx eslint --init
 ```
 
@@ -63,8 +63,8 @@ npx eslint --init
 
 比如 react 的项目，集成 `eslint-plugin-react-hooks` 检测 `react hooks` 规则。请查阅 [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) 。
 
-```bash
-yarn add eslint-plugin-react-hooks --dev
+```shell
+pnpm add eslint-plugin-react-hooks --dev
 ```
 
 ```javascript
@@ -88,16 +88,16 @@ yarn add eslint-plugin-react-hooks --dev
 
 - **安装**
 
-```bash
-yarn add stylelint --dev
+```shell
+pnpm add stylelint --dev
 ```
 
 - **参考配置**
 
 需要安装：
 
-```bash
-yarn add stylelint-config-standard stylelint-config-css-modules stylelint-config-rational-order stylelint-config-prettier stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties --dev
+```shell
+pnpm add stylelint-config-standard stylelint-config-css-modules stylelint-config-rational-order stylelint-config-prettier stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties --dev
 ```
 
 `stylelint.config.js`
@@ -159,8 +159,8 @@ module.exports = {
 
 可安装 [`prettier-plugin-two-style-order`](https://www.npmjs.com/package/prettier-plugin-two-style-order)
 
-```bash
-yarn add prettier-plugin-two-style-order -D
+```shell
+pnpm add prettier-plugin-two-style-order -D
 ```
 
 项目根目录新增 `.vscode` 目录，并添加以下文件：
@@ -193,8 +193,8 @@ yarn add prettier-plugin-two-style-order -D
 
 - **安装**
 
-```bash
-yarn add prettier --dev
+```shell
+pnpm add prettier --dev
 ```
 
 - **配置项**
@@ -305,8 +305,8 @@ yarn-error.log
 
 - **安装**
 
-```bash
-yarn add lint-staged --dev
+```shell
+pnpm add lint-staged --dev
 ```
 
 - **常用脚本**
@@ -317,8 +317,7 @@ yarn add lint-staged --dev
 {
   // ...
   "scripts": {
-    "lint-staged": "lint-staged",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged" // 后面改用 husky 的 pre-commit
   },
   "lint-staged": {
     "**/*.{css,less}": "stylelint --fix",
@@ -340,17 +339,36 @@ git hooks 工具：
 - [`simple-git-hooks`](https://github.com/toplenboren/simple-git-hooks)
 - [`yorkie`](https://www.npmjs.com/package/yorkie)
 
-以下为使用 yorkie 示例
+以下为使用 husky 示例
 
 - **安装**
 
-```bash
-yarn add @commitlint/cli @commitlint/config-conventional cz-conventional-changelog yorkie --dev
+```shell
+pnpm dlx husky-init && pnpm install
+```
+
+```shell
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+```
+
+然后将 `.husky/pre-commit` 改为
+
+```shell
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no-install lint-staged
+```
+
+安装 commitlint 相关的包
+
+```shell
+pnpm add @commitlint/cli @commitlint/config-conventional cz-conventional-changelog --dev
 ```
 
 生成配置文件
 
-```bash
+```shell
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 ```
 
@@ -365,10 +383,6 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "npx --no -- commitlint --edit \"$1\""
   }
 }
 ```
@@ -389,7 +403,7 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 }
 ```
 
-原先使用 `git commit -m xxx` 改用 `yarn commit` ，当然也可以直接使用 `npx cz`。
+原先使用 `git commit -m xxx` 改用 `pnpm commit` ，当然也可以直接使用 `npx cz`。
 
 ## package json 配置
 
@@ -401,7 +415,6 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
   // ...
   "scripts": {
     // ...
-    "lint-staged": "lint-staged",
     "prettier": "prettier --write **/*",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:fix": "npm run lint-fix:js && npm run lint-fix:style",
@@ -420,10 +433,6 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "npx --no -- commitlint --edit \"$1\""
   }
 }
 ```
