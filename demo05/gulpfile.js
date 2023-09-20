@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const zip = require('gulp-zip');
-const htmlmin = require('gulp-htmlmin');
+const htmlmin = require('gulp-html-minifier-terser');
 const clean = require('gulp-clean');
 const dayjs = require('dayjs');
 const cleanCSS = require('gulp-clean-css');
