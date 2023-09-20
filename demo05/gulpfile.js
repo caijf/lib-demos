@@ -13,9 +13,8 @@ const destDir = outputDir;
 
 const htmlSrc = 'src/**/*.html';
 const cssSrc = 'src/**/*.css';
-const imageSrc = 'src/**/*.{jpeg,jpg,png,gif,svg}';
 const jsSrc = 'src/**/*.js';
-const otherSrc = [`src/**`, `!${htmlSrc}`, `!${cssSrc}`, `!${imageSrc}`, `!${jsSrc}`];
+const otherSrc = [`src/**`, `!${htmlSrc}`, `!${cssSrc}`, `!${jsSrc}`];
 
 function cleanDist() {
   return gulp.src(outputDir, { read: false, allowEmpty: true })
@@ -52,14 +51,6 @@ function js() {
     .pipe(gulp.dest(destDir));
 }
 
-function image() {
-  return import('gulp-imagemin').then((imagemin) => {
-    return gulp.src(imageSrc)
-      .pipe(imagemin.default())
-      .pipe(gulp.dest(destDir))
-  });
-}
-
 function copyOther() {
   return gulp.src(otherSrc)
     .pipe(gulp.dest(destDir));
@@ -71,4 +62,4 @@ function compress() {
     .pipe(gulp.dest('build'))
 }
 
-exports.default = gulp.series(cleanDist, gulp.parallel(html, js, css, image, copyOther), compress);
+exports.default = gulp.series(cleanDist, gulp.parallel(html, js, css, copyOther), compress);
