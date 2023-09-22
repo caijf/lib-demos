@@ -7,7 +7,7 @@
 - **安装**
 
 ```shell
-pnpm add eslint --dev
+pnpm add eslint -D
 ```
 
 - **初始化配置**
@@ -64,7 +64,7 @@ npx eslint --init
 比如 react 的项目，集成 `eslint-plugin-react-hooks` 检测 `react hooks` 规则。请查阅 [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) 。
 
 ```shell
-pnpm add eslint-plugin-react-hooks --dev
+pnpm add eslint-plugin-react-hooks -D
 ```
 
 ```javascript
@@ -89,7 +89,7 @@ pnpm add eslint-plugin-react-hooks --dev
 - **安装**
 
 ```shell
-pnpm add stylelint --dev
+pnpm add stylelint -D
 ```
 
 - **参考配置**
@@ -97,7 +97,7 @@ pnpm add stylelint --dev
 需要安装：
 
 ```shell
-pnpm add stylelint-config-standard stylelint-config-css-modules stylelint-config-rational-order stylelint-config-prettier stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties --dev
+pnpm add stylelint-config-standard stylelint-config-css-modules stylelint-config-rational-order stylelint-config-prettier stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties -D
 ```
 
 `stylelint.config.js`
@@ -194,7 +194,7 @@ pnpm add prettier-plugin-two-style-order -D
 - **安装**
 
 ```shell
-pnpm add prettier --dev
+pnpm add prettier -D
 ```
 
 - **配置项**
@@ -306,7 +306,7 @@ yarn-error.log
 - **安装**
 
 ```shell
-pnpm add lint-staged --dev
+pnpm add lint-staged -D
 ```
 
 - **常用脚本**
@@ -363,7 +363,7 @@ npx --no-install lint-staged
 安装 commitlint 相关的包
 
 ```shell
-pnpm add @commitlint/cli @commitlint/config-conventional cz-conventional-changelog --dev
+pnpm add @commitlint/cli @commitlint/config-conventional cz-conventional-changelog -D
 ```
 
 生成配置文件
