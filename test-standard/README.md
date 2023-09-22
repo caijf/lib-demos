@@ -25,7 +25,7 @@ npx eslint --init
   // ...
   "scripts": {
     // ...
-    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint:js": "eslint --ext .js,.mjs,.jsx,.ts,.tsx src",
     "lint-fix:js": "npm run lint:js -- --fix"
   }
 }
@@ -275,11 +275,9 @@ CNAME
 LICENSE
 package.json
 package-lock.json
-
 *.lock
 yarn-error.log
 *debug.log
-
 pnpm-lock.yaml
 
 .gitignore
@@ -323,8 +321,8 @@ pnpm add lint-staged -D
   },
   "lint-staged": {
     "**/*.{css,less}": "stylelint --fix",
-    "**/*.{js,jsx,ts,tsx}": "eslint",
-    "**/*.{css,scss,less,js,jsx,ts,tsx,json,md}": "prettier -w"
+    "**/*.{js,mjs,jsx,ts,tsx}": "eslint",
+    "**/*.{css,scss,less,js,mjs,jsx,ts,tsx,json,md}": "prettier -w"
   }
 }
 ```
@@ -430,8 +428,8 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
   },
   "lint-staged": {
     "**/*.{css,less}": "stylelint --fix",
-    "**/*.{js,jsx,ts,tsx}": "eslint",
-    "**/*.{css,scss,less,js,jsx,ts,tsx,json,md}": "prettier -w"
+    "**/*.{js,mjs,jsx,ts,tsx}": "eslint",
+    "**/*.{css,scss,less,js,mjs,jsx,ts,tsx,json,md}": "prettier -w"
   },
   "config": {
     "commitizen": {
@@ -451,7 +449,10 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 # dependencies
 node_modules
 yarn.lock
+yarn-debug.log*
+yarn-error.log*
 package-lock.json
+npm-debug.log*
 pnpm-lock.yaml
 
 # testing
@@ -461,11 +462,6 @@ coverage
 build
 zip
 dist
-
-# logs
-yarn-debug.log*
-yarn-error.log*
-npm-debug.log*
 
 # misc
 .DS_Store
