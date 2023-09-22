@@ -280,6 +280,8 @@ package-lock.json
 yarn-error.log
 *debug.log
 
+pnpm-lock.yaml
+
 .gitignore
 .prettierignore
 .eslintignore
@@ -343,6 +345,8 @@ git hooks 工具：
 
 - **安装**
 
+先安装 `husky`
+
 ```shell
 pnpm dlx husky-init && pnpm install
 ```
@@ -359,6 +363,8 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 
 npx --no-install lint-staged
 ```
+
+_上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不要重复设置。_
 
 安装 commitlint 相关的包
 
@@ -386,8 +392,6 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
   }
 }
 ```
-
-_上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不要重复设置。_
 
 - **常用脚本**
 
@@ -446,6 +450,9 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 # dependencies
 node_modules
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
 
 # testing
 coverage
@@ -455,12 +462,12 @@ build
 zip
 dist
 
-# misc
-.DS_Store
-
-npm-debug.log*
+# logs
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
-package-lock.json
+npm-debug.log*
+
+# misc
+.DS_Store
+.DS_Store?
 ```
