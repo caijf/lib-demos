@@ -13,7 +13,7 @@ pnpm add eslint -D
 - **初始化配置**
 
 ```shell
-npx eslint --init
+pnpm dlx eslint --init
 ```
 
 根据交互式命令快速生成 `eslint` 配置文件，安装对应的包。
@@ -350,7 +350,7 @@ pnpm dlx husky-init && pnpm install
 ```
 
 ```shell
-npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+pnpm dlx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 ```
 
 然后将 `.husky/pre-commit` 改为
