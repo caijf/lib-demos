@@ -157,6 +157,8 @@ module.exports = {
 
 1. 保存 `*.less` 文件后自动处理样式顺序
 
+> 注意： `pnpm` 和 `Yarn PnP` 中的插件不会自动加载，需要手动配置 `prettier plugins` ，参考：<https://github.com/prettier/prettier/issues/14905>
+
 可安装 [`prettier-plugin-two-style-order`](https://www.npmjs.com/package/prettier-plugin-two-style-order)
 
 ```shell
@@ -246,7 +248,11 @@ _注：常用配置字体加粗斜体_
   "printWidth": 100,
   "bracketSpacing": true,
   "arrowParens": "always",
-  "proseWrap": "never"
+  "proseWrap": "never",
+  // ref: https://github.com/prettier/prettier/issues/14905#issuecomment-1577304501
+  "plugins": [
+    "prettier-plugin-two-style-order"
+  ]
 }
 ```
 
