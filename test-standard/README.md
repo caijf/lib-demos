@@ -355,7 +355,9 @@ git hooks 工具：
 
 ```shell
 pnpm add husky -D
+```
 
+```shell
 pnpm exec husky init
 # or
 npx husky init
