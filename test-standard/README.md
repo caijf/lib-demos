@@ -351,21 +351,19 @@ git hooks 工具：
 
 先安装 `husky`
 
+> 当前 husky 版本 v9+
+
 ```shell
-npx husky-init && pnpm install
+pnpm add husky -D
+
+pnpm exec husky init
+# or
+npx husky init
 ```
 
 ```shell
-npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
-```
-
-然后将 `.husky/pre-commit` 改为
-
-```shell
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx --no-install lint-staged
+echo 'npx --no -- commitlint --edit "$1"' > .husky/commit-msg
+echo 'npx --no-install lint-staged' > .husky/pre-commit
 ```
 
 _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不要重复设置。_
@@ -373,13 +371,13 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 安装 commitlint 相关的包
 
 ```shell
-pnpm add @commitlint/cli @commitlint/config-conventional cz-conventional-changelog -D
+pnpm add @commitlint/cli @commitlint/config-conventional @commitlint/cz-commitlint commitizen inquirer@9 -D
 ```
 
 生成配置文件
 
 ```shell
-echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
 ```
 
 - **配置**
@@ -391,7 +389,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
   // ...
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "@commitlint/cz-commitlint"
     }
   }
 }
