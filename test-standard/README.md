@@ -25,8 +25,7 @@ npx eslint --init
   // ...
   "scripts": {
     // ...
-    "lint:js": "eslint --ext .js,.mjs,.jsx,.ts,.tsx src",
-    "lint-fix:js": "npm run lint:js -- --fix"
+    "lint": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx"
   }
 }
 ```
@@ -97,7 +96,7 @@ pnpm add stylelint -D
 需要安装：
 
 ```shell
-pnpm add stylelint-config-standard stylelint-config-css-modules stylelint-config-rational-order stylelint-config-prettier stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties -D
+pnpm add stylelint-config-css-modules stylelint-config-standard stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties postcss-less -D
 ```
 
 `stylelint.config.js`
@@ -107,8 +106,6 @@ module.exports = {
   extends: [
     'stylelint-config-standard',
     'stylelint-config-css-modules',
-    'stylelint-config-rational-order',
-    'stylelint-config-prettier',
     'stylelint-no-unsupported-browser-features'
   ],
   plugins: ['stylelint-declaration-block-no-ignored-properties'],
@@ -146,7 +143,6 @@ module.exports = {
   "scripts": {
     // ...
     "lint:style": "stylelint src/**/*.less",
-    "lint-fix:style": "npm run lint:stylelint -- --fix"
   }
 }
 ```
@@ -424,12 +420,8 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commit
   "scripts": {
     // ...
     "prettier": "prettier --write **/*",
-    "lint": "npm run lint:js && npm run lint:style",
-    "lint:fix": "npm run lint-fix:js && npm run lint-fix:style",
-    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx src",
-    "lint-fix:js": "npm run lint:js -- --fix",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint src/**/*.less",
-    "lint-fix:style": "npm run lint:stylelint -- --fix",
     "commit": "cz"
   },
   "lint-staged": {
