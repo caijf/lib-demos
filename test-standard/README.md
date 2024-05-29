@@ -142,7 +142,7 @@ module.exports = {
   // ...
   "scripts": {
     // ...
-    "lint:style": "stylelint src/**/*.less",
+    "lint:style": "stylelint src/**/*.{css,less}",
   }
 }
 ```
@@ -259,7 +259,7 @@ _注：常用配置字体加粗斜体_
   // ...
   "scripts": {
     // ...
-    "prettier": "prettier --write **/*"
+    "prettier": "prettier -w **/*"
   }
 }
 ```
@@ -419,9 +419,9 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commit
   // ...
   "scripts": {
     // ...
-    "prettier": "prettier --write **/*",
+    "prettier": "prettier -w **/*",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:style": "stylelint src/**/*.less",
+    "lint:style": "stylelint src/**/*.{css,less}",
     "commit": "cz"
   },
   "lint-staged": {
