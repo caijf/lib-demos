@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders correctly 1`] = `
+<a
+  aria-label="Link is normal"
+  class="normal"
+  href="http://baidu.com"
+>
+  some text
+</a>
+`;
+
+exports[`renders correctly 2`] = `
+<a
+  aria-label="Link is hovered"
+  class="hovered"
+  href="http://baidu.com"
+>
+  some text
+</a>
+`;

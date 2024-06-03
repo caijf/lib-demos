@@ -1,3 +1,0 @@
-perfer-workspace-packages: true
-packages:
-  - './*'
