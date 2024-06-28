@@ -135,6 +135,16 @@ module.exports = {
 };
 ```
 
+`.stylelintignore`
+
+```text
+node_modules/
+dist/
+dist-ssr/
+dist-analyze/
+dev-dist/
+```
+
 - **常用脚本**
 
 ```javascript
@@ -282,6 +292,8 @@ _注：常用配置字体加粗斜体_
 
 CNAME
 LICENSE
+logs
+*.log
 package.json
 package-lock.json
 *.lock
@@ -298,10 +310,15 @@ pnpm-lock.yaml
 *.svg
 *.png
 *.jpg
+*.jpeg
 *.gif
 *.bmp
+*.ico
 
 /dist
+/dist-ssr
+/dist-analyze
+/dev-dist
 /build
 /coverage
 ```
@@ -452,13 +469,14 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commit
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-node_modules
-yarn.lock
+logs
+*.logo
+npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-npm-debug.log*
-pnpm-lock.yaml
+pnpm-debug.log*
+lerna-debug.log*
+node_modules
 
 # testing
 coverage
@@ -467,8 +485,19 @@ coverage
 build
 zip
 dist
+dist-ssr
+dist-analyze
+dev-dist
+*.local
 
 # misc
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-.DS_Store?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 ```
