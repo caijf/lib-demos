@@ -436,7 +436,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commit
 
 - **常用脚本**
 
-这里使用了 [`commitizen`](https://www.npmjs.com/package/commitizen) [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) 交互式生成规范提交信息。
+这里使用了 [`commitizen`](https://www.npmjs.com/package/commitizen) [`@commitlint/cz-commitlint`](https://www.npmjs.com/package/@commitlint/cz-commitlint) 交互式生成规范提交信息。
 
 ```javascript
 {
