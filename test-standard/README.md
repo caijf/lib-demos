@@ -56,6 +56,13 @@ npx eslint --init
 /lib
 /es
 /dist
+/dist-ssr
+/dist-analyze
+/dev-dist
+/types
+/docs
+/build
+/coverage
 ```
 
 3. 自定义集成第三方检查库
@@ -139,10 +146,16 @@ module.exports = {
 
 ```text
 node_modules/
-dist/
-dist-ssr/
-dist-analyze/
-dev-dist/
+/lib
+/es
+/dist
+/dist-ssr
+/dist-analyze
+/dev-dist
+/types
+/docs
+/build
+/coverage
 ```
 
 - **常用脚本**
@@ -315,10 +328,14 @@ pnpm-lock.yaml
 *.bmp
 *.ico
 
+/lib
+/es
 /dist
 /dist-ssr
 /dist-analyze
 /dev-dist
+/types
+/docs
 /build
 /coverage
 ```
@@ -446,6 +463,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commit
     "prettier": "prettier -w **/*",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint src/**/*.{css,less}",
+    "prepare": "husky",
     "commit": "cz"
   },
   "lint-staged": {
@@ -455,7 +473,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commit
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "@commitlint/cz-commitlint"
     }
   }
 }
