@@ -4,6 +4,102 @@
 
 检查 es/ts 语法，发现问题，代码格式。其中，代码格式一般会交给 `prettier` 处理。
 
+### eslint v9
+
+- **环境准备**
+
+`nodejs >= 18`
+
+- **安装**
+
+```shell
+pnpm add eslint @eslint/js typescript-eslint globals
+```
+
+> 如果不使用 `typescript` 可以不安装 `typescript-eslint`，配置文件直接导出一个数组即可。
+
+- 配置文件
+
+`eslint.config.mjs`
+
+```typescript
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import globals from 'globals';
+import reactRefresh from 'eslint-plugin-react-refresh';
+
+export default tseslint.config(
+  {
+    ignores: ['dist/', 'dist-analyze/', 'dev-dist/', 'dist-ssr/', 'types/', 'build/', 'docs/', 'coverage/', 'lib/', 'es/']
+  },
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  {
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      'react-refresh': reactRefresh
+    },
+    languageOptions: {
+      parser: tseslint.parser,
+      globals: {
+        ...globals.browser
+      }
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 0,
+      '@typescript-eslint/ban-ts-comment': 0
+    }
+  }
+);
+```
+
+- **react-hooks**
+
+如果是 react 开发项目，可以添加 `eslint-plugin-react-hooks` 插件。
+
+> ref: <https://github.com/facebook/react/issues/28313#issuecomment-2407428442>
+
+```shell
+pnpm add eslint-plugin-react-hooks@rc -D
+```
+
+`eslint.config.mjs`
+
+```diff
++ import reactHooks from 'eslint-plugin-react-hooks';
+
+export default tseslint.config(
+  // ...
+  {
+    plugins: {
+      // ...
++     'react-hooks': reactHooks,
+    },
+    // ...
+    rules: {
+      // ...
++     ...reactHooks.configs.recommended.rules
+    }
+  }
+)
+```
+
+- **常用脚本**
+
+`package.json`
+
+```json
+{
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  }
+}
+```
+
+<details>
+  <summary>eslint v8 说明</summary>
+
 - **安装**
 
 ```shell
@@ -76,17 +172,14 @@ pnpm add eslint-plugin-react-hooks -D
 ```javascript
 // Your ESLint configuration
 {
-  "plugins": [
+  "extends": [
     // ...
-    "react-hooks"
-  ],
-  "rules": {
-    // ...
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
-  }
+    'plugin:react-hooks/recommended'
+  ]
 }
 ```
+
+</details>
 
 ## [stylelint](https://stylelint.io/)
 
@@ -262,11 +355,11 @@ pnpm add prettier -D
 | **_useTabs_** | 用制表符而不是空格缩进行。 | `boolean` | `false` |
 | vueIndentScriptAndStyle | 是否缩进 Vue 文件中的代码`<script>`和`<style>`标签。有些人（如 Vue 的创建者）不缩进以保存缩进级别，但这可能会破坏编辑器中的代码折叠。<br/>`false` - 不要在 Vue 文件中缩进脚本和样式标签。<br/>`true` - 在 Vue 文件中缩进脚本和样式标签。 | `boolean` | `false` |
 
-_注：常用配置字体加粗斜体_
+> 注：常用配置字体加粗斜体
 
 - **常用配置**
 
-**.prettierrc**
+`.prettierrc`
 
 ```javascript
 {
