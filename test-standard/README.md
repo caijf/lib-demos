@@ -13,7 +13,7 @@
 - **安装**
 
 ```shell
-pnpm add eslint @eslint/js typescript-eslint globals
+pnpm add eslint @eslint/js typescript-eslint globals -D
 ```
 
 > 如果不使用 `typescript` 可以不安装 `typescript-eslint`，配置文件直接导出一个数组即可。
