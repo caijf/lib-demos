@@ -42,7 +42,8 @@ export default tseslint.config(
     languageOptions: {
       parser: tseslint.parser,
       globals: {
-        ...globals.browser
+        ...globals.browser,
+        ...globals.node
       }
     },
     rules: {
@@ -57,10 +58,8 @@ export default tseslint.config(
 
 如果是 react 开发项目，可以添加 `eslint-plugin-react-hooks` 插件。
 
-> ref: <https://github.com/facebook/react/issues/28313#issuecomment-2407428442>
-
 ```shell
-pnpm add eslint-plugin-react-hooks@rc -D
+pnpm add eslint-plugin-react-hooks -D
 ```
 
 `eslint.config.mjs`
@@ -82,6 +81,31 @@ export default tseslint.config(
     }
   }
 )
+```
+
+- **react-refresh**
+
+用于配合 React Refresh 来进行代码检查。
+
+```shell
+pnpm add eslint-plugin-react-refresh -D
+```
+
+`eslint.config.mjs`
+
+```diff
++import reactRefresh from 'eslint-plugin-react-refresh';
+
+export default tseslint.config(
+  //...
+  {
+    plugins: {
+      // ...
++      'react-refresh': reactRefresh
+    },
+    //...
+  }
+);
 ```
 
 - **常用脚本**
