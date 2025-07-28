@@ -12,7 +12,7 @@
 
 - **安装**
 
-```shell
+```bash
 pnpm add eslint @eslint/js typescript-eslint globals -D
 ```
 
@@ -26,7 +26,6 @@ pnpm add eslint @eslint/js typescript-eslint globals -D
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import globals from 'globals';
-import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default tseslint.config(
   {
@@ -36,8 +35,7 @@ export default tseslint.config(
   tseslint.configs.recommended,
   {
     plugins: {
-      '@typescript-eslint': tseslint.plugin,
-      'react-refresh': reactRefresh
+      '@typescript-eslint': tseslint.plugin
     },
     languageOptions: {
       parser: tseslint.parser,
@@ -58,7 +56,7 @@ export default tseslint.config(
 
 如果是 react 开发项目，可以添加 `eslint-plugin-react-hooks` 插件。
 
-```shell
+```bash
 pnpm add eslint-plugin-react-hooks -D
 ```
 
@@ -87,7 +85,7 @@ export default tseslint.config(
 
 用于配合 React Refresh 来进行代码检查。
 
-```shell
+```bash
 pnpm add eslint-plugin-react-refresh -D
 ```
 
@@ -126,13 +124,13 @@ export default tseslint.config(
 
 - **安装**
 
-```shell
+```bash
 pnpm add eslint -D
 ```
 
 - **初始化配置**
 
-```shell
+```bash
 npx eslint --init
 ```
 
@@ -189,7 +187,7 @@ npx eslint --init
 
 比如 react 的项目，集成 `eslint-plugin-react-hooks` 检测 `react hooks` 规则。请查阅 [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) 。
 
-```shell
+```bash
 pnpm add eslint-plugin-react-hooks -D
 ```
 
@@ -211,7 +209,7 @@ pnpm add eslint-plugin-react-hooks -D
 
 - **安装**
 
-```shell
+```bash
 pnpm add stylelint -D
 ```
 
@@ -219,7 +217,7 @@ pnpm add stylelint -D
 
 需要安装：
 
-```shell
+```bash
 pnpm add stylelint-config-css-modules stylelint-config-standard stylelint-no-unsupported-browser-features stylelint-declaration-block-no-ignored-properties postcss-less -D
 ```
 
@@ -298,7 +296,7 @@ node_modules/
 
 安装 [`prettier-plugin-two-style-order`](https://www.npmjs.com/package/prettier-plugin-two-style-order)
 
-```shell
+```bash
 pnpm add prettier-plugin-two-style-order -D
 ```
 
@@ -343,7 +341,7 @@ pnpm add prettier-plugin-two-style-order -D
 
 - **安装**
 
-```shell
+```bash
 pnpm add prettier -D
 ```
 
@@ -466,7 +464,7 @@ pnpm-lock.yaml
 
 - **安装**
 
-```shell
+```bash
 pnpm add lint-staged -D
 ```
 
@@ -508,17 +506,17 @@ git hooks 工具：
 
 > 当前 husky 版本 v9+
 
-```shell
+```bash
 pnpm add husky -D
 ```
 
-```shell
+```bash
 pnpm exec husky init
 # or
 npx husky init
 ```
 
-```shell
+```bash
 echo 'npx --no -- commitlint --edit "$1"' > .husky/commit-msg
 echo 'npx --no-install lint-staged' > .husky/pre-commit
 ```
@@ -527,13 +525,13 @@ _上面 lint-staged 中 precommit 也可以在 git hooks 中设置 ，注意不�
 
 安装 commitlint 相关的包
 
-```shell
+```bash
 pnpm add @commitlint/cli @commitlint/config-conventional @commitlint/cz-commitlint commitizen inquirer@9 -D
 ```
 
 生成配置文件
 
-```shell
+```bash
 echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
 ```
 
