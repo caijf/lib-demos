@@ -1,0 +1,39 @@
+{
+  "name": "test-jest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@babel/register": "^7.27.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/enzyme": "^3.10.19",
+    "@types/jest": "^26.0.24",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
+    "babel-jest": "^26.6.3",
+    "cheerio": "1.0.0-rc.3",
+    "enzyme": "^3.11.0",
+    "jest": "^26.6.3",
+    "jest-changed-files": "^26.6.2",
+    "jest-diff": "^26.6.2",
+    "jest-docblock": "^26.0.0",
+    "jest-get-type": "^26.3.0",
+    "jest-validate": "^26.6.2",
+    "jest-worker": "^26.6.2",
+    "pretty-format": "^26.6.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-test-renderer": "^18.3.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

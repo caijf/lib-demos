@@ -4,11 +4,19 @@
 node_modules
 
 # testing
-coverage
+*/*/coverage
 
 # production
-build
-zip
+*/*/build
+*/*/output
+*/*/docs-dist
+*/*/dist
+*/*/umd
+*/*/lib
+*/*/cjs
+*/*/es
+*/*/zip
+*/*/docs-dist
 
 # misc
 .DS_Store

@@ -1,0 +1,23 @@
+{
+  "name": "static-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "caijf",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "dayjs": "^1.11.13",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-html-minifier-terser": "^7.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.1.0"
+  }
+}

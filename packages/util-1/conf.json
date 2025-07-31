@@ -1,0 +1,46 @@
+{
+  "tags": {
+    "allowUnknownTags": false
+  },
+  "source": {
+    "include": ["src", "README.md"],
+    "exclude": [],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+    "template": "node_modules/docdash",
+    "encoding": "utf8",
+    "destination": "docs-dist/",
+    "recurse": true,
+    "verbose": true
+  },
+  "docdash": {
+    "openGraph": {
+      "title": "uil-1",
+      "type": "website",
+      "image": "",
+      "site_name": "uil-1",
+      "url": "https://caijf.github.io/lib-demos/uil-1/docs/index.html"
+    },
+    "meta": {
+      "title": "uil-1 ",
+      "description": "测试工具方法库",
+      "keyword": "util, uil-1"
+    },
+    "search": true,
+    "menu": {
+      "Github repo": {
+        "href": "https://github.com/caijf/lib-demos",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repo_link"
+      }
+    }
+  }
+}

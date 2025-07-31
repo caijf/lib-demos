@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:style": "stylelint **/*.{css,less}",
+    "prettier": "prettier -w **/*",
     "commit": "cz",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{css,less}": "stylelint --fix",
+    "**/*.{js,mjs,jsx,ts,tsx}": "eslint",
+    "**/*.{css,scss,less,js,mjs,jsx,ts,tsx,json,md}": "prettier -w"
   },
   "config": {
     "commitizen": {
@@ -25,12 +33,27 @@
   },
   "homepage": "https://github.com/caijf/lib-demos#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
-    "@commitlint/cz-commitlint": "^19.2.0",
-    "commitizen": "^4.3.0",
-    "husky": "^9.0.11",
-    "inquirer": "^9.2.16"
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cz-commitlint": "^19.8.1",
+    "@eslint/js": "^9.32.0",
+    "commitizen": "^4.3.1",
+    "eslint": "^9.32.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "inquirer": "^9.3.7",
+    "lint-staged": "^16.1.2",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-two-style-order": "^1.0.1",
+    "stylelint": "^16.23.0",
+    "stylelint-config-css-modules": "^4.5.1",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-no-unsupported-browser-features": "^8.0.4",
+    "typescript-eslint": "^8.38.0"
   },
   "private": true
 }

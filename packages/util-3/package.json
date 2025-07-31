@@ -1,0 +1,41 @@
+{
+  "name": "util-3",
+  "version": "1.0.0",
+  "description": "typescript + rollup 开发的工具库",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:es && npm run build:umd",
+    "build:cjs": "rm -rf cjs && tsc -p tsconfig.build.json --outDir cjs -d -t ES5 -m commonjs",
+    "build:es": "rm -rf es && tsc -p tsconfig.build.json --outDir es -d -t ES5 -m ES2015",
+    "build:umd": "rm -rf umd && rollup -c",
+    "test": "jest --coverage --verbose",
+    "doc": "rm -rf docs && typedoc --out docs-dist src/index.ts"
+  },
+  "files": [
+    "es",
+    "cjs",
+    "umd"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "rollup": "^3.29.5",
+    "ts-jest": "^29.4.0",
+    "typedoc": "^0.28.8",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+lib/
+es/
+dist/
+docs-dist/
+dist-ssr/
+dist-analyze/
+dev-dist/
+types/
+docs/
+build/
+coverage/
