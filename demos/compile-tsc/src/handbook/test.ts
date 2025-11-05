@@ -45,3 +45,10 @@ type TransformFieldNames<
 // }
 // var x = contain({ a: 1 }, 'a'); // string
 // var y = contain({ b: 1 }, 'a'); // number
+
+// 用于标识字段必填，但是值可以为undefined
+type RequiredKey<T> = {
+  [P in keyof T]: T[P] | undefined;
+};
+// 测试 RequiredKey
+type TestRequiredKey = RequiredKey<{ a: number; b: string }>;
